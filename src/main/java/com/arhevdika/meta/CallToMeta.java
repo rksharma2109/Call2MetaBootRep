@@ -36,7 +36,10 @@ public class CallToMeta {
 	  }*/
 	//EncryptDecrypt encdec=new EncryptDecrypt();
 	Encdec encdec= new Encdec();
-	
+	@GetMapping(value = "/ssl-test")
+    public String inbound(){
+        return "Inbound TLS is working!!";
+    }
 	@RequestMapping(value={"/meta"}, method = RequestMethod.POST)
 	  public  ResponseEntity<GeneralResponse>  callTometa(@RequestBody MetaPayload metaPayload,HttpServletResponse response ) throws IOException   {
 			HttpStatus httpstatus=null;
