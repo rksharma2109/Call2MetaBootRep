@@ -42,7 +42,8 @@ public class CallToMeta {
         return "Inbound TLS is working!!";
     }
 	@RequestMapping(value={"/meta"}, method = RequestMethod.POST)
-	  public  ResponseEntity<GeneralResponse>  callTometa(@RequestBody MetaPayload metaPayload,HttpServletResponse response ) throws IOException   {
+	  public  ResponseEntity<GeneralResponse>  callTometa(@RequestBody MetaPayload metaPayload,HttpServletResponse response ) 
+			  throws IOException   {
 			HttpStatus httpstatus=null;
 			String responseMessage="";
 			String status=null;
@@ -54,9 +55,9 @@ public class CallToMeta {
 		    System.out.println(encData);
 		    System.out.println(response);
 		 
-		    response.setHeader("Access-Control-Allow-Origin", "https://truckersapp.eastus.cloudapp.azure.com/index.html");
+		    response.setHeader("Access-Control-Allow-Origin", "https://nice-water-07efcb210.3.azurestaticapps.net/");
 			//response.sendRedirect("http://truckersapp.eastus.cloudapp.azure.com:9080/metaWebApp/index.html?data="+encData);
-		    response.sendRedirect("https://truckersapp.eastus.cloudapp.azure.com/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
+		    response.sendRedirect("https://nice-water-07efcb210.3.azurestaticapps.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
 		    responseMessage="Url opened successfully";
 			 status="true";
 			 httpstatus=HttpStatus.OK;
@@ -112,5 +113,77 @@ public class CallToMeta {
 	       return redirectView;
 	      
 	   }
-	  
+//	@RequestMapping(value = { "/response" }, method = RequestMethod.POST, produces = {
+//			MediaType.APPLICATION_JSON_VALUE })
+//	@ResponseStatus(value = HttpStatus.OK)
+//	public ResponseEntity<MetaResponse_Response> save_metadataResponse(@RequestBody MetaDataResponsePayload metaPayload) {
+//		LOGGER.info("save MetaData Response api has been called !!! Start Of Method save metadata response");
+//		
+//		HttpStatus httpstatus=null;
+//		String response="";
+//		String status=null;
+//		
+//		try {
+//			 MetaDataResponse mt=new MetaDataResponse();
+//			mt.setApplicant_id(Long.parseLong(encdec.decryptnew(metaPayload.getApplicant_id())));
+//			mt.setApplicant_response(encdec.decryptnew(metaPayload.getResponse()));
+//			mt.setUser_pin(encdec.decryptnew(metaPayload.getUser_pin()));
+//			 Date date = new Date();
+//			
+//			mt.setRequest_type("response");
+//			
+//			mt.setDatetime_of_request(date);
+//			metaDataRepo.save(mt);
+//					
+//				response="response saved successfully for applicant id"+Long.parseLong(encdec.decryptnew(metaPayload.getApplicant_id()));
+//					status="true";
+//			httpstatus=HttpStatus.OK;
+//			}
+//					
+//		catch (Exception e) {
+//			
+//			response="Error While saving metadata response" + e.getMessage();
+//			LOGGER.error(response + e.getMessage());
+//			status="false";
+//			httpstatus=HttpStatus.BAD_REQUEST;
+//		}
+//		return ResponseEntity.status(httpstatus).body(new MetaResponse_Response (encdec.encryptnew(response),encdec.encryptnew(status)));
+//	}
+//	@RequestMapping(value = { "/request" }, method = RequestMethod.POST, produces = {
+//			MediaType.APPLICATION_JSON_VALUE })
+//	@ResponseStatus(value = HttpStatus.OK)
+//	public ResponseEntity<MetaResponse_Response> save_metadataRequest(@RequestBody  ApplicantPayload metaPayload) {
+//		LOGGER.info("save MetaData Request api has been called !!! Start Of Method save metadata request");
+//		
+//		HttpStatus httpstatus=null;
+//		String response="";
+//		String status=null;
+//		
+//		try {
+//			 MetaDataResponse mt=new MetaDataResponse();
+//			mt.setApplicant_id(Long.parseLong(encdec.decryptnew(metaPayload.getApplicant_id())));
+//			mt.setRequest_type("request");
+//			
+//			 Date date = new Date();
+//			
+//			mt.setDatetime_of_request(date);
+//			metaDataRepo.save(mt);
+//					
+//				response="resquest time saved successfully for applicant id"+Long.parseLong(encdec.decryptnew(metaPayload.getApplicant_id()));
+//					status="true";
+//			httpstatus=HttpStatus.OK;
+//			}
+//					
+//		catch (Exception e) {
+//			
+//			response="Error While saving metadata request" + e.getMessage();
+//			LOGGER.error(response + e.getMessage());
+//			status="false";
+//			httpstatus=HttpStatus.BAD_REQUEST;
+//		}
+//		return ResponseEntity.status(httpstatus).body(new MetaResponse_Response (encdec.encryptnew(response),encdec.encryptnew(status)));
+//	}
+	//}
+
+  
 }
