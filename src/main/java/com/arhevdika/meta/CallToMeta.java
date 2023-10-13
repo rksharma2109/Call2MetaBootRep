@@ -25,7 +25,7 @@ import org.springframework.web.client.HttpServerErrorException.InternalServerErr
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.arhevdika.meta.Encdec;
-@CrossOrigin(origins = "https://websitetometa.blob.core.windows.net/staticwebsite")
+@CrossOrigin(origins = "*")
 @RestController
 public class CallToMeta {
 
