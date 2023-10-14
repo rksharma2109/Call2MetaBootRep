@@ -25,7 +25,7 @@ import org.springframework.web.client.HttpServerErrorException.InternalServerErr
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.arhevdika.meta.Encdec;
-@CrossOrigin(origins = "https://websitetometa.blob.core.windows.net/")
+//@CrossOrigin(origins = "https://websitetometa.blob.core.windows.net/")
 @RestController
 public class CallToMeta {
 
@@ -55,7 +55,7 @@ public class CallToMeta {
 		    System.out.println(encData);
 		    System.out.println(response);
 
-		    response.setHeader("Access-Control-Allow-Origin", "https://websitetometa.blob.core.windows.net/");
+		   // response.setHeader("Access-Control-Allow-Origin", "https://websitetometa.blob.core.windows.net/");
 			//response.sendRedirect("http://truckersapp.eastus.cloudapp.azure.com:9080/metaWebApp/index.html?data="+encData);
 		    response.sendRedirect("https://websitetometa.blob.core.windows.net/staticwebsite/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
 		    responseMessage="Url opened successfully";
