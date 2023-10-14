@@ -48,16 +48,16 @@ public class CallToMeta {
 			String responseMessage="";
 			String status=null;
 			try {
-				 System.out.println("in call to meta dukh bhanjan1 api");
+				 System.out.println("in call to meta dukh bhanjan1 api new one");
 			String data="name="+metaPayload.getName()+"&clanguage="+metaPayload.getClanguage()+"&accnum="+metaPayload.getAccnum()+"&loanamout="+metaPayload.getLoanamout()+"&pendingamount="+metaPayload.getPendingamount()+"&EMIamount="+metaPayload.getEMIamount()+"&duedate="+metaPayload.getDuedate()+"&pemi="+metaPayload.getPemi() ;
 			 System.out.println(data);
 			String encData=encdec.encryptnew(data);
 		    System.out.println(encData);
 		    System.out.println(response);
 
-		    response.setHeader("Access-Control-Allow-Origin", "https://websitetometa.blob.core.windows.net");
+		    response.setHeader("Access-Control-Allow-Origin", "https://nice-water-07efcb210.3.azurestaticapps.net");
 			//response.sendRedirect("http://truckersapp.eastus.cloudapp.azure.com:9080/metaWebApp/index.html?data="+encData);
-		    response.sendRedirect("https://websitetometa.blob.core.windows.net/staticwebsite/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
+		    response.sendRedirect("https://nice-water-07efcb210.3.azurestaticapps.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
 		    responseMessage="Url opened successfully";
 			 status="true";
 			 httpstatus=HttpStatus.OK;
