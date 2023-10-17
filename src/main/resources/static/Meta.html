@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<html>
+
+<head>
+    <title>
+        Create an HTML button that
+        acts like a link
+    </title>
+
+    <!-- Style to create button -->
+    <style>
+        .GFG {
+            background-color: white;
+            border: 2px solid black;
+            color: green;
+            padding: 5px 10px;
+            text-align: center;
+            display: inline-block;
+            font-size: 20px;
+            margin: 10px 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>GeeksforGeeks</h1>
+
+    <!-- Adding link to the button on the onclick event -->
+    <button class="GFG"
+    onclick=callmeta()>
+        Click Here
+    </button>
+</body>
+  <script>
+  function callmeta(){
+alert("ram ram ji");
+  $.ajax(
+  {
+         type: 'POST',
+          url: 'https://metawebapp.azurewebsites.net/meta',
+   
+          data: JSON.stringify({
+
+			    "name": "rohit",
+			    "clanguage": "english",
+			    "accnum": "210988",
+			    "pendingamount": "2000",
+			    "duedate": "12-sep-2025",
+			    "pemi": "500",
+			    "emiamount": "5000",
+			    "loanamout": "10000"
+
+          }),
+
+          contentType: "application/json; charset=utf-8",
+		             
+             dataType: "json",
+crossDomain: true,
+    rejectUnauthorized: false ,
+          success: function (data, status, jqXHR) {
+          alert("SUCCESS");
+              //location.reload();
+          }
+    });
+  }
+  </script>
+
+</html>

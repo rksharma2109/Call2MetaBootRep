@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ArthaVedika</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+  </head>
+  <body>
+    <!-- //link //name=ekta&clanguage=english&accnum=250&loanamout=5000&pendingamount=1000&EMIamount=1000&duedate=05/12/2356&pemi=1 -->
+    <div id="modal">
+      <div class="modalconent">
+        <h1></h1>
+
+        <p>Easiofy Virtual Bank</p>
+
+        <button id="button1">Normal Mode</button>
+        <button id="button2">VR Mode</button>
+      </div>
+    </div>
+    <!-- <div class="overlay" id="overlay">
+      <div id="textContainer"></div>
+    </div> -->
+    <div id="container"></div>
+    <audio id="audioPlayer" style="display: none" controls></audio>
+    <audio>
+      <source id="source" src="" type="audio/wav" />
+      Your browser does not support the audio element.
+    </audio>
+    <div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <script language="Javascript">
+      window.onload = function () {
+        var mobile =
+          /iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(
+            navigator.userAgent.toLowerCase()
+          );
+        if (screen.availHeight > screen.availWidth) {
+          alert("Please use Landscape mode for better experience");
+        } else {
+        }
+      };
+    </script>
+    <!-- partial -->
+    <script
+      type="text/javascript"
+      src="https://truckersapp.eastus.cloudapp.azure.com/js/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://truckersapp.eastus.cloudapp.azure.com/js/three.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://truckersapp.eastus.cloudapp.azure.com/js/panolens.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://truckersapp.eastus.cloudapp.azure.com/js/GLTFLoader.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://truckersapp.eastus.cloudapp.azure.com/js/TweenMax.min.js"
+    ></script>
+    <script
+      type="application/javascript"
+      src="https://truckersapp.eastus.cloudapp.azure.com/js/dictate.js"
+    ></script>
+    <script
+      type="application/javascript"
+      src="https://truckersapp.eastus.cloudapp.azure.com/js/recorder.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://truckersapp.eastus.cloudapp.azure.com/js/NoSleep.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://truckersapp.eastus.cloudapp.azure.com/js/RecordRTC.js"
+    ></script>
+
+    <script src="https://truckersapp.eastus.cloudapp.azure.com/script.js"></script>
+  </body>
+</html>
