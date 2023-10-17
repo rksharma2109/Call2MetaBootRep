@@ -55,7 +55,7 @@ public class CallToMeta {
 		    System.out.println(encData);
 		    System.out.println(response);
 
-		    response.setHeader("Access-Control-Allow-Origin", "https://nice-water-07efcb210.3.azurestaticapps.net");
+		   // response.setHeader("Access-Control-Allow-Origin", "https://nice-water-07efcb210.3.azurestaticapps.net");
 			//response.sendRedirect("http://truckersapp.eastus.cloudapp.azure.com:9080/metaWebApp/index.html?data="+encData);
 		    response.sendRedirect("https://nice-water-07efcb210.3.azurestaticapps.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
 		    responseMessage="Url opened successfully";
