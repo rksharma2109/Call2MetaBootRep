@@ -32,11 +32,11 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/truckersapp.eastus.cloudapp.azure.com")
-                .allowedOrigins("*") // You may want to restrict this to specific origins
-                .allowedMethods("GET", "POST", "PUT", "DELETE")
-                .allowedHeaders("*")
-                .allowCredentials(false)
-                .maxAge(3600);
+        @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("https://nice-water-07efcb210.3.azurestaticapps.net") // Add your website's domain
+                .allowedMethods("GET", "POST", "PUT", "DELETE");
+    }
     }
 }
