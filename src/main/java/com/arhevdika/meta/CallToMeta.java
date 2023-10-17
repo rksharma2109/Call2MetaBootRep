@@ -46,7 +46,7 @@ public class CallToMeta {
         return "index";
     }
 	 @GetMapping("/metahtml")
-    public String serveIndexPage() {
+    public String serveMetaPage() {
         return "Meta";
     }
 	@RequestMapping(value={"/meta"}, method = RequestMethod.POST)
