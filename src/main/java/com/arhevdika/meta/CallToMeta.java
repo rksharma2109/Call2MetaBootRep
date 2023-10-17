@@ -41,14 +41,7 @@ public class CallToMeta {
     public String inbound(){
         return "Inbound TLS is working!!";
     }
-	 @GetMapping("/index")
-    public String serveIndexPage() {
-        return "index";
-    }
-	 @GetMapping("/metahtml")
-    public String serveMetaPage() {
-        return "Meta";
-    }
+	
 	@RequestMapping(value={"/meta"}, method = RequestMethod.POST)
 	  public  ResponseEntity<GeneralResponse>  callTometa(@RequestBody MetaPayload metaPayload,HttpServletResponse response )
 			  throws IOException   {
