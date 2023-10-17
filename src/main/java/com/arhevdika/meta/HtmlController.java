@@ -7,8 +7,8 @@ public class HtmlController {
     public String serveIndexPage() {
         return "index";
     }
-	 @GetMapping("/metahtml")
-    public String serveMetaPage() {
+	 @GetMapping("/meta")
+    public String serveMetaPage1() {
         return "Meta";
     }
 }
