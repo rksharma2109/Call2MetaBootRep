@@ -45,7 +45,7 @@ public class CallToMeta {
     public String serveIndexPage() {
         return "index";
     }
-	 @GetMapping("/metahtml)
+	 @GetMapping("/metahtml")
     public String serveIndexPage() {
         return "Meta";
     }
