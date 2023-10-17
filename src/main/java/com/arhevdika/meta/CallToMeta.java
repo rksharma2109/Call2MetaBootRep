@@ -45,6 +45,10 @@ public class CallToMeta {
     public String serveIndexPage() {
         return "index";
     }
+	 @GetMapping("/metahtml)
+    public String serveIndexPage() {
+        return "Meta";
+    }
 	@RequestMapping(value={"/meta"}, method = RequestMethod.POST)
 	  public  ResponseEntity<GeneralResponse>  callTometa(@RequestBody MetaPayload metaPayload,HttpServletResponse response )
 			  throws IOException   {
