@@ -78,10 +78,13 @@ public class CallToMeta {
 		
 		}
 	@PostMapping(value = "/redirectURL")
-	public String Redirecttourl(@RequestBody MetaPayload metaPayload) {
-   // productosRepository.save(producto);
-    return "redirect:https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a";
-}
+	 public ResponseEntity<Void> redirectURL(@RequestBody MetaPayload
+//			metaPayload){
+ 
+        System.out.println(metaPayload);
+ 
+        return ResponseEntity.status(HttpStatus.FOUND).location(URI.create("https://fullstackdeveloper.guru")).build();
+    }
 //	public ResponseEntity<Void> redirect(
 //			@RequestBody MetaPayload
 //			metaPayload,HttpServletResponse response
