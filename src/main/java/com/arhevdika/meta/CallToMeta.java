@@ -49,6 +49,7 @@ public class CallToMeta {
 			HttpStatus httpstatus=null;
 			String responseMessage="";
 			String status=null;
+			 HttpHeaders headers = new HttpHeaders();
 			try {
 				 System.out.println("in call to meta dukh bhanjan1 api new one");
 			String data="name="+metaPayload.getName()+"&clanguage="+metaPayload.getClanguage()+"&accnum="+metaPayload.getAccnum()+"&loanamout="+metaPayload.getLoanamout()+"&pendingamount="+metaPayload.getPendingamount()+"&EMIamount="+metaPayload.getEMIamount()+"&duedate="+metaPayload.getDuedate()+"&pemi="+metaPayload.getPemi() ;
@@ -56,7 +57,7 @@ public class CallToMeta {
 			String encData=encdec.encryptnew(data);
 		    System.out.println(encData);
 		    System.out.println(response);
-		HttpHeaders headers = new HttpHeaders();
+		//HttpHeaders headers = new HttpHeaders();
        		 headers.add("Location", "https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
 
 		   // response.setHeader("Access-Control-Allow-Origin", "https://nice-water-07efcb210.3.azurestaticapps.net");
