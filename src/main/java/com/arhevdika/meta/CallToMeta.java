@@ -43,7 +43,7 @@ public class CallToMeta {
     }
 	
 	@RequestMapping(value={"/meta"}, method = RequestMethod.POST)
-	  public RedirectView   callTometa(@RequestBody MetaPayload metaPayload,HttpServletResponse response )
+	  public ResponseEntity<Object>   callTometa(@RequestBody MetaPayload metaPayload,HttpServletResponse response )
 			  throws IOException   {
 			HttpStatus httpstatus=null;
 			String responseMessage="";
@@ -55,6 +55,8 @@ public class CallToMeta {
 			String encData=encdec.encryptnew(data);
 		    System.out.println(encData);
 		    System.out.println(response);
+		HttpHeaders headers = new HttpHeaders();
+       		 headers.add("Location", "https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
 
 		   // response.setHeader("Access-Control-Allow-Origin", "https://nice-water-07efcb210.3.azurestaticapps.net");
 			//response.sendRedirect("http://truckersapp.eastus.cloudapp.azure.com:9080/metaWebApp/index.html?data="+encData);
@@ -77,7 +79,8 @@ public class CallToMeta {
 			 httpstatus=HttpStatus.INTERNAL_SERVER_ERROR;
 			System.out.println("error is"+e);
 		}
-              return new RedirectView("https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
+		return new ResponseEntity<>(headers, HttpStatus.FOUND);		  
+             // return new RedirectView("https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
 			//return ResponseEntity.status(httpstatus).body(new GeneralResponse(encdec.encryptnew(responseMessage),encdec.encryptnew(status)));
 		}
 //	public ResponseEntity<Void> redirect(
