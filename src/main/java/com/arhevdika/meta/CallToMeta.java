@@ -79,7 +79,7 @@ public class CallToMeta {
 		}
 	@PostMapping(value = "/redirectURL")
 	 public ResponseEntity<Void> redirectURL(@RequestBody MetaPayload
-//			metaPayload){
+			metaPayload){
  
         System.out.println(metaPayload);
  
