@@ -31,18 +31,12 @@ import com.arhevdika.meta.Encdec;
 public class CallToMeta {
 
 
-	/*@RequestMapping("/meta")
-	  void handleFoo(HttpServletResponse response) throws IOException {
-		String data =
-	    response.sendRedirect("http://truckersapp.eastus.cloudapp.azure.com:9080/metaWebApp/index.html?data=U2FsdGVkX18huKndy8J3qoSs2/C9YkkujdzzUzs5RVjYuRxVvvVsN1iG64gbOhfTY8NfeG9Pa4pKW5C245CVHzWdOnSYDzp73Oyi7k4OWUFKs58HK+cUtm2+f82t1Cb5HCU4m7t1i2oFZQvhWJPPDUJ+ZaWb2iIRvl6W5X8UoXGn2m2mks2nb14PdEEBhdf/");
-	  }*/
-	//EncryptDecrypt encdec=new EncryptDecrypt();
 	Encdec encdec= new Encdec();
 	@GetMapping(value = "/ssl-test")
     public String inbound(){
         return "Inbound TLS is working!!";
     }
-	
+
 	@RequestMapping(value={"/meta"}, method = RequestMethod.POST)
 	  public ResponseEntity<Object>   callTometa(@RequestBody MetaPayload metaPayload,HttpServletResponse response )
 			  throws IOException   {
@@ -81,7 +75,7 @@ public class CallToMeta {
 			 httpstatus=HttpStatus.INTERNAL_SERVER_ERROR;
 			System.out.println("error is"+e);
 		}
-		return new ResponseEntity<>(headers, HttpStatus.FOUND);		  
+		return new ResponseEntity<>(headers, HttpStatus.FOUND);
              // return new RedirectView("https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
 			//return ResponseEntity.status(httpstatus).body(new GeneralResponse(encdec.encryptnew(responseMessage),encdec.encryptnew(status)));
 		}
@@ -117,7 +111,7 @@ public class CallToMeta {
 
 
 	       RedirectView redirectView = new RedirectView();
-	       redirectView.setUrl("https://truckersapp.eastus.cloudapp.azure.com/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
+	       redirectView.setUrl("https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
 
 	       return redirectView;
 
