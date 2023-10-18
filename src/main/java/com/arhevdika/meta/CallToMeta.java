@@ -50,7 +50,7 @@ public class CallToMeta {
 			 System.out.println(data);
 			String encData=encdec.encryptnew(data);
 		    System.out.println(encData);
-		    System.out.println(response);
+		    //System.out.println(response);
 		//HttpHeaders headers = new HttpHeaders();
        		 headers.add("Location", "https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
 
