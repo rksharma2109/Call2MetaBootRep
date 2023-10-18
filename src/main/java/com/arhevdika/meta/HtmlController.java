@@ -7,7 +7,7 @@ public class HtmlController {
     public String serveIndexPage() {
         return "index";
     }
-	 @GetMapping("/meta")
+	 @GetMapping("/dummpypage")
     public String serveMetaPage1() {
         return "Meta";
     }
