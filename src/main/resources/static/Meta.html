@@ -61,10 +61,10 @@ complete: function(xmlHttp) {
     alert(xmlHttp.status);
 
 	alert(xmlHttp.responseText);
-	if (xhr.status == 200) {
+	if (xmlHttp.status == 200) {
        var redirect = null;
        try {
-           redirect = $.parseJSON(xhr.responseText).redirect;
+           redirect = $.parseJSON(xmlHttp.responseText).redirect;
            if (redirect) {
                window.location.href = redirect.replace(/\?.*$/, "?next=" + window.location.pathname);
            }
