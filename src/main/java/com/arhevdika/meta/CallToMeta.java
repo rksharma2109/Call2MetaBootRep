@@ -27,7 +27,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import com.arhevdika.meta.Encdec;
 //@CrossOrigin(origins = {"https://nice-water-07efcb210.3.azurestaticapps.net","https://metawebapp.azurewebsites.net"})
-@RestController
+@Controller
 public class CallToMeta {
 
 
