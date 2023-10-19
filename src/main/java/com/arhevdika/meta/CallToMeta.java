@@ -89,12 +89,12 @@ public  ModelAndView gotoNextPage(@RequestBody MetaPayload metaPayload, HttpServ
 		
 		}
 	@PostMapping(value = "/redirectURL")
-	 public String redirectURL(@RequestBody MetaPayload
-			metaPayload){
+	 public void redirectURL(@RequestBody MetaPayload
+			metaPayload,HttpServletResponse response){
  
         System.out.println(metaPayload);
  
-         return "index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a";
+         response.sendRedirect( "/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
     }
 //	public ResponseEntity<Void> redirect(
 //			@RequestBody MetaPayload
