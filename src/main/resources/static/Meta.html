@@ -63,7 +63,9 @@ complete: function(xmlHttp) {
 	alert(xmlHttp.responseText);
 	location.reload();
 	alert(location);
-	window.location.replace(xmlHttp.redirect);
+	document.open();
+        document.write(XMLHttpRequest.responseText);
+        document.close();
   },
           success: function (data, status, jqXHR) {
           alert("SUCCESS");
