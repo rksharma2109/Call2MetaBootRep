@@ -90,7 +90,7 @@ public  ModelAndView gotoNextPage(@RequestBody MetaPayload metaPayload, HttpServ
 		}
 	@PostMapping(value = "/redirectURL")
 	 public void redirectURL(@RequestBody MetaPayload
-			metaPayload,HttpServletResponse response){
+			metaPayload,HttpServletResponse response) throws IOException {
  
         System.out.println(metaPayload);
  
