@@ -59,11 +59,11 @@ alert("ram ram ji02");
 complete: function(xmlHttp) {
     // xmlHttp is a XMLHttpRquest object
     alert(xmlHttp.status);
-	alert(xmlHttp.headers.get('Location'));
+	alert(xmlHttp.headers);
 	alert(xmlHttp.responseText);
 	location.reload();
 	alert(location);
-	window.location=xmlHttp.headers.get('Location');
+	window.location.replace(xmlHttp.redirect);
   },
           success: function (data, status, jqXHR) {
           alert("SUCCESS");
