@@ -35,7 +35,7 @@
 </body>
   <script>
   function callmeta(){
-alert("ram ram ji");
+alert("ram ram ji02");
   $.ajax(
   {
          type: 'POST',
@@ -54,11 +54,12 @@ alert("ram ram ji");
 
           }),
 
-          contentType: "application/json; charset=utf-8",
-		             
+          contentType: "application/json; charset=utf-8",		             
              dataType: "json",
-crossDomain: true,
-    rejectUnauthorized: false ,
+complete: function(xmlHttp) {
+    // xmlHttp is a XMLHttpRquest object
+    alert(xmlHttp.status);
+  },
           success: function (data, status, jqXHR) {
           alert("SUCCESS");
               location.reload();
