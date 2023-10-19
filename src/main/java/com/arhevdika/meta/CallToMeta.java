@@ -43,12 +43,10 @@ public class CallToMeta {
 public  ModelAndView gotoNextPage(@RequestBody MetaPayload metaPayload, HttpServletResponse response){
     System.out.println("Inside gotoNextPage!!!!!!");
 
-    ModelMap model = new ModelMap();
-    model.add("message", "next page");
+   
     return new ModelAndView(
-       new RedirectView("/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a", true),model);
-    
-}
+     new RedirectView("/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a", true));
+    }
 	@RequestMapping(value={"/meta"}, method = RequestMethod.POST)
 	  public RedirectView   callTometa(@RequestBody MetaPayload metaPayload )
 			  throws IOException   {
