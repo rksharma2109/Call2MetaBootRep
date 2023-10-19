@@ -80,12 +80,12 @@ public class CallToMeta {
 		
 		}
 	@PostMapping(value = "/redirectURL")
-	 public ResponseEntity<Void> redirectURL(@RequestBody MetaPayload
+	 public String redirectURL(@RequestBody MetaPayload
 			metaPayload){
  
         System.out.println(metaPayload);
  
-        return ResponseEntity.status(HttpStatus.FOUND).location(URI.create("https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a")).build();
+         return "redirect:/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a";
     }
 //	public ResponseEntity<Void> redirect(
 //			@RequestBody MetaPayload
