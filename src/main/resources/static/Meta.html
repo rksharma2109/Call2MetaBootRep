@@ -35,7 +35,7 @@
 </body>
   <script>
   function callmeta(){
-alert("ram ram ji02");
+alert("ram ram ji22");
   $.ajax(
   {
          type: 'POST',
@@ -59,18 +59,20 @@ alert("ram ram ji02");
 complete: function(xmlHttp) {
     // xmlHttp is a XMLHttpRquest object
     alert(xmlHttp.status);
-	alert(xmlHttp.headers);
+
 	alert(xmlHttp.responseText);
-	location.reload();
-	alert(location);
-	document.open();
-        document.write(XMLHttpRequest.responseText);
-        document.close();
-  },
-          success: function (data, status, jqXHR) {
-          alert("SUCCESS");
-              location.reload();
-          }
+	if (xhr.status == 200) {
+       var redirect = null;
+       try {
+           redirect = $.parseJSON(xhr.responseText).redirect;
+           if (redirect) {
+               window.location.href = redirect.replace(/\?.*$/, "?next=" + window.location.pathname);
+           }
+       } catch (e) {
+           return;
+       }
+   }
+  }
     });
   }
   </script>
