@@ -40,7 +40,7 @@ public class CallToMeta {
         return "Inbound TLS is working!!";
     }
 @RequestMapping(value="/gotoNextPage",method = RequestMethod.POST)
-public  ModelAndView gotoNextPage(HttpServletRequest request, HttpServletResponse response){
+public  ModelAndView gotoNextPage(@RequestBody MetaPayload metaPayload, HttpServletResponse response){
     System.out.println("Inside gotoNextPage!!!!!!");
 
     ModelMap model = new ModelMap();
