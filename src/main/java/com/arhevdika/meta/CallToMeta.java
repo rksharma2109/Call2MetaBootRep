@@ -3,8 +3,9 @@ package com.arhevdika.meta;
 import java.io.IOException;
 import java.net.URI;
 import java.util.Map;
-
+import org.springframework.web.servlet.ModelAndView;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.ui.ModelMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,18 @@ public class CallToMeta {
     public String inbound(){
         return "Inbound TLS is working!!";
     }
+@RequestMapping(value="/gotoNextPage",method = RequestMethod.POST)
+public  ModelAndView gotoNextPage(HttpServletRequest request, HttpServletResponse response){
+    System.out.println("Inside gotoNextPage!!!!!!");
 
+    ModelMap model = new ModelMap();
+    model.add("message", "next page");
+    return new ModelAndView(
+       new RedirectView("/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a", true),
+       //or new RedirectView("/nextpage.html", true),
+       model
+    );
+}
 	@RequestMapping(value={"/meta"}, method = RequestMethod.POST)
 	  public RedirectView   callTometa(@RequestBody MetaPayload metaPayload )
 			  throws IOException   {
