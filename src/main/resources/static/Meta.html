@@ -60,10 +60,11 @@ alert("ram ram ji22ram");
 
           contentType: "application/json; charset=utf-8",		             
              dataType: "json",
-complete: function(xmlHttp) {
+complete: function(xmlHttp,jqXHR ) {
     // xmlHttp is a XMLHttpRquest object
     alert(xmlHttp.status);
     alert(xmlHttp.redirect);
+	console.log(jqXHR);
 	alert(xmlHttp.responseText);
 	if (xmlHttp.status == 200) {
        var redirect = null;
@@ -76,7 +77,11 @@ complete: function(xmlHttp) {
            return;
        }
    }
-  }
+  },
+	  success: function(data, textStatus, jqXHR ){
+console.log(jqXHR);
+...
+}
     });
   }
 	   function callnewOne(){
@@ -117,7 +122,11 @@ complete: function(xmlHttp) {
            return;
        }
    }
-  }
+  },
+	  success: function(data, textStatus, jqXHR ){
+console.log(jqXHR);
+...
+}
     });
   }
   </script>
