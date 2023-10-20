@@ -54,7 +54,11 @@ public  ModelAndView gotoNextPage(@RequestBody MetaPayload metaPayload, HttpServ
 			HttpStatus httpstatus=null;
 			String responseMessage="";
 			String status=null;
-			 HttpHeaders headers = new HttpHeaders();
+			
+				  
+			
+		    	HttpHeaders httpHeaders = new HttpHeaders();
+		   	httpHeaders.setLocation(redirecturl);
 			try {
 				System.out.println("in call to meta dukh bhanjan1 api new one");
 				String data="name="+metaPayload.getName()+"&clanguage="+metaPayload.getClanguage()+"&accnum="+metaPayload.getAccnum()+"&loanamout="+metaPayload.getLoanamout()+"&pendingamount="+metaPayload.getPendingamount()+"&EMIamount="+metaPayload.getEMIamount()+"&duedate="+metaPayload.getDuedate()+"&pemi="+metaPayload.getPemi() ;
@@ -62,6 +66,7 @@ public  ModelAndView gotoNextPage(@RequestBody MetaPayload metaPayload, HttpServ
 				String encData=encdec.encryptnew(data);
 			   	System.out.println(encData);
 				responseMessage="Url opened successfully";
+				 URI redirecturl = new URI("https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
 				status="true";
 				httpstatus=HttpStatus.OK;	
 			}
@@ -70,26 +75,25 @@ public  ModelAndView gotoNextPage(@RequestBody MetaPayload metaPayload, HttpServ
 			 status="false";
 			 httpstatus=HttpStatus.BAD_REQUEST;
 			System.out.println("error is"+e);}
-		catch(InternalServerError e) {
+		catch(Exception e) {
 			responseMessage="Error While opening url" + e.getMessage();
 			 status="false";
 			 httpstatus=HttpStatus.INTERNAL_SERVER_ERROR;
 			System.out.println("error is"+e);
 		}
-			 URI redirecturl = new URI("https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
-		    	HttpHeaders httpHeaders = new HttpHeaders();
-		   	httpHeaders.setLocation(redirecturl);
 		   	 return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
 		      
 		
 		}
 	@PostMapping(value = "/redirectURL")
-	 public void redirectURL(@RequestBody MetaPayload
+	 public RedirectView  redirectURL(@RequestBody MetaPayload
 			metaPayload,HttpServletResponse response) throws IOException {
- 
-        System.out.println(metaPayload);
- 
-         response.sendRedirect( "/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
+	   RedirectView redirectView = new RedirectView()	 ;
+         String redirectUrl ="/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a";
+         redirectView.setUrl(redirectUrl);
+         redirectView.setStatusCode(HttpStatus.TEMPORARY_REDIRECT);
+	 return RedirectView;
+
     }
 //	public ResponseEntity<Void> redirect(
 //			@RequestBody MetaPayload
