@@ -92,7 +92,7 @@ public  ModelAndView gotoNextPage(@RequestBody MetaPayload metaPayload, HttpServ
 	   RedirectView redirectView = new RedirectView()	 ;
          String redirectUrl ="/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a";
          redirectView.setUrl(redirectUrl);
-         redirectView.setStatusCode(HttpStatus.TEMPORARY_REDIRECT);
+         //redirectView.setStatusCode(HttpStatus.TEMPORARY_REDIRECT);
 	 return redirectView;
 
     }
