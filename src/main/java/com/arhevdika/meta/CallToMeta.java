@@ -41,22 +41,17 @@ public class CallToMeta {
         return "Inbound TLS is working!!";
     }
 @RequestMapping(value="/gotoNextPage",method = RequestMethod.POST)
-public  ModelAndView gotoNextPage(@RequestBody MetaPayload metaPayload, HttpServletResponse response){
+public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws IOException {
     System.out.println("Inside gotoNextPage!!!!!!");
-
-   
-    return new ModelAndView(
-     new RedirectView("/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a", true));
+            return new RedirectView("/index.html", true);
     }
+   
 	@RequestMapping(value={"/meta"}, method = RequestMethod.POST)
 	  public ResponseEntity<Void>  callTometa(@RequestBody MetaPayload metaPayload )
 			  throws IOException   {
 			HttpStatus httpstatus=null;
 			String responseMessage="";
 			String status=null;
-			
-				  
-			
 		    	HttpHeaders httpHeaders = new HttpHeaders();
 		   
 			try {
