@@ -32,6 +32,10 @@
     onclick=callmeta()>
         Click Here
     </button>
+	 <button class="GFG"
+    onclick=callmeta()>
+        Click new
+    </button>
 </body>
   <script>
   function callmeta(){
@@ -40,6 +44,47 @@ alert("ram ram ji22ram");
   {
          type: 'POST',
           url: 'https://metawebapp.azurewebsites.net/redirectURL',
+   
+          data: JSON.stringify({
+
+			    "name": "rohit",
+			    "clanguage": "english",
+			    "accnum": "210988",
+			    "pendingamount": "2000",
+			    "duedate": "12-sep-2025",
+			    "pemi": "500",
+			    "emiamount": "5000",
+			    "loanamout": "10000"
+
+          }),
+
+          contentType: "application/json; charset=utf-8",		             
+             dataType: "json",
+complete: function(xmlHttp) {
+    // xmlHttp is a XMLHttpRquest object
+    alert(xmlHttp.status);
+    alert(xmlHttp.redirect);
+	alert(xmlHttp.responseText);
+	if (xmlHttp.status == 200) {
+       var redirect = null;
+       try {
+           redirect = $.parseJSON(xmlHttp.responseText).redirect;
+           if (redirect) {
+               window.location.href = redirect.replace(/\?.*$/, "?next=" + window.location.pathname);
+           }
+       } catch (e) {
+           return;
+       }
+   }
+  }
+    });
+  }
+	   function callnewOne(){
+alert("ram ram ji22ram");
+  $.ajax(
+  {
+         type: 'POST',
+          url: 'https://metawebapp.azurewebsites.net/gotoNextPage',
    
           data: JSON.stringify({
 
