@@ -49,27 +49,21 @@ public  ModelAndView gotoNextPage(@RequestBody MetaPayload metaPayload, HttpServ
      new RedirectView("/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a", true));
     }
 	@RequestMapping(value={"/meta"}, method = RequestMethod.POST)
-	  public RedirectView   callTometa(@RequestBody MetaPayload metaPayload )
+	  public ResponseEntity<Void>  callTometa(@RequestBody MetaPayload metaPayload )
 			  throws IOException   {
 			HttpStatus httpstatus=null;
 			String responseMessage="";
 			String status=null;
 			 HttpHeaders headers = new HttpHeaders();
 			try {
-				 System.out.println("in call to meta dukh bhanjan1 api new one");
-			String data="name="+metaPayload.getName()+"&clanguage="+metaPayload.getClanguage()+"&accnum="+metaPayload.getAccnum()+"&loanamout="+metaPayload.getLoanamout()+"&pendingamount="+metaPayload.getPendingamount()+"&EMIamount="+metaPayload.getEMIamount()+"&duedate="+metaPayload.getDuedate()+"&pemi="+metaPayload.getPemi() ;
-			 System.out.println(data);
-			String encData=encdec.encryptnew(data);
-		    System.out.println(encData);
-		    //System.out.println(response);
-		//HttpHeaders headers = new HttpHeaders();
-       		 headers.add("Location", "https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
-
-		  
+				System.out.println("in call to meta dukh bhanjan1 api new one");
+				String data="name="+metaPayload.getName()+"&clanguage="+metaPayload.getClanguage()+"&accnum="+metaPayload.getAccnum()+"&loanamout="+metaPayload.getLoanamout()+"&pendingamount="+metaPayload.getPendingamount()+"&EMIamount="+metaPayload.getEMIamount()+"&duedate="+metaPayload.getDuedate()+"&pemi="+metaPayload.getPemi() ;
+				System.out.println(data);
+				String encData=encdec.encryptnew(data);
+			   	System.out.println(encData);
 				responseMessage="Url opened successfully";
-			  status="true";
-			  httpstatus=HttpStatus.OK;
-		
+				status="true";
+				httpstatus=HttpStatus.OK;	
 			}
 		catch(BadRequest e){
 			responseMessage="Error While opening url" + e.getMessage();
@@ -82,10 +76,11 @@ public  ModelAndView gotoNextPage(@RequestBody MetaPayload metaPayload, HttpServ
 			 httpstatus=HttpStatus.INTERNAL_SERVER_ERROR;
 			System.out.println("error is"+e);
 		}
-				  RedirectView redirectView = new RedirectView();
-       redirectView.setUrl("https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
- 
-       return redirectView;
+			 URI redirecturl = new URI("https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
+		    	HttpHeaders httpHeaders = new HttpHeaders();
+		   	httpHeaders.setLocation(redirecturl);
+		   	 return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
+		      
 		
 		}
 	@PostMapping(value = "/redirectURL")
