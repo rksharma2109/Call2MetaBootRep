@@ -43,7 +43,7 @@ alert("ram ram ji22ram");
   $.ajax(
   {
          type: 'POST',
-          url: 'https://metawebapp.azurewebsites.net/redirectURL',
+          url: 'https://metawebapp.azurewebsites.net/redirectURLString',
    
           data: JSON.stringify({
 
@@ -63,19 +63,12 @@ alert("ram ram ji22ram");
 complete: function(xmlHttp,jqXHR ) {
     // xmlHttp is a XMLHttpRquest object
     alert(xmlHttp.status);
-    alert(xmlHttp.redirect);
-	console.log(jqXHR);
+    
+	
 	alert(xmlHttp.responseText);
 	if (xmlHttp.status == 200) {
-       var redirect = null;
-       try {
-           redirect = $.parseJSON(xmlHttp.responseText).redirect;
-           if (redirect) {
-               window.location.href = redirect.replace(/\?.*$/, "?next=" + window.location.pathname);
-           }
-       } catch (e) {
-           return;
-       }
+		window.location=xmlHttp.responseText;
+       
    }
   },
 	  success: function(data, textStatus, jqXHR ){
