@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.http.HttpStatus;
 import com.arhevdika.meta.Encdec;
 //@CrossOrigin(origins = {"https://nice-water-07efcb210.3.azurestaticapps.net","https://metawebapp.azurewebsites.net"})
-@Controller
+@RestController
 public class CallToMeta {
 
 
