@@ -88,7 +88,7 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
 		
 	@PostMapping(value = "/redirectURL")
 	 public String  redirectURL(@RequestBody MetaPayload
-			metaPayload,HttpServletResponse response) throws IOException {
+			metaPayload) {
 	 String redirectUrl ="https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a";
    	 return redirectUrl; 
     }
