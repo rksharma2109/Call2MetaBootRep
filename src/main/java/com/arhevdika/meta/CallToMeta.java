@@ -77,19 +77,17 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
 			 httpstatus=HttpStatus.INTERNAL_SERVER_ERROR;
 			System.out.println("error is"+e);
 		}
-		   	 return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
-		      
-		
-		}
+		   	 return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);      
+	}
 	// @PostMapping(value = "/redirectURL")
 	//  public ResponseEntity<Void>  redirectURL(@RequestBody MetaPayload
 	// 		metaPayload,HttpServletResponse response) throws IOException {
 	//  String redirectUrl ="/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a";
  //   	 return ResponseEntity.status(HttpStatus.FOUND).location(URI.create(redirectUrl)).build();  
  //    }
-		}
+		
 	@PostMapping(value = "/redirectURL")
-	 public String  redirectURLString(@RequestBody MetaPayload
+	 public String  redirectURL(@RequestBody MetaPayload
 			metaPayload,HttpServletResponse response) throws IOException {
 	 String redirectUrl ="https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a";
    	 return redirectUrl; 
