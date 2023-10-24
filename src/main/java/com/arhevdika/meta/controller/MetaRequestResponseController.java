@@ -35,7 +35,7 @@ import com.arhevdika.meta.response.MetaResponse_Response;
 public class MetaRequestResponseController {
 	Encdec encdec= new Encdec();
 	@Autowired
-	MetadataResponseRepo metaDataRepo;
+	private MetadataResponseRepo metaDataRepo;
 	@RequestMapping(value = { "/response" }, method = RequestMethod.POST, produces = {
 			MediaType.APPLICATION_JSON_VALUE })
 	@ResponseStatus(value = HttpStatus.OK)
