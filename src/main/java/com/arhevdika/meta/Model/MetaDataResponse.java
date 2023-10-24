@@ -4,10 +4,10 @@ package com.arhevdika.meta.Model;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
+import jakarta.persistence.Table;
 
 
 
@@ -17,12 +17,13 @@ import javax.persistence.Table;
 public class MetaDataResponse {
 	@Id
 Long applicant_id;
+	@Id
+	Date datetime_of_request;
 String applicant_response;
 
 String user_pin;
 String request_type;
-@Id
-Date datetime_of_request;
+
 public String getRequest_type() {
 	return request_type;
 }
