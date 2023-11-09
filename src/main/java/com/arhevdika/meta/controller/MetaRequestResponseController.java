@@ -45,7 +45,7 @@ public class MetaRequestResponseController {
 		HttpStatus httpstatus=null;
 		String response="";
 		String status=null;
-		
+		System.out.println("in request api and request is"+metaPayload.getApplicant_id());
 		try {
 			 MetaDataResponse mt=new MetaDataResponse();
 			mt.setApplicant_id(Long.parseLong(encdec.decryptnew(metaPayload.getApplicant_id())));
@@ -66,6 +66,7 @@ public class MetaRequestResponseController {
 		catch (Exception e) {
 			
 			response="Error While saving metadata response" + e.getMessage();
+			System.out.println("in reponse api and error is"+response);
 			//LOGGER.error(response + e.getMessage());
 			status="false";
 			httpstatus=HttpStatus.BAD_REQUEST;
@@ -86,7 +87,7 @@ public class MetaRequestResponseController {
 			 MetaDataResponse mt=new MetaDataResponse();
 			mt.setApplicant_id(Long.parseLong(encdec.decryptnew(metaPayload.getApplicant_id())));
 			mt.setRequest_type("request");
-			
+			System.out.println("in request api and request is"+metaPayload.getApplicant_id());
 			 Date date = new Date();
 			
 			mt.setDatetime_of_request(date);
@@ -100,6 +101,7 @@ public class MetaRequestResponseController {
 		catch (Exception e) {
 			
 			response="Error While saving metadata request" + e.getMessage();
+			System.out.println("in request api and error is"+response);
 			//LOGGER.error(response + e.getMessage());
 			status="false";
 			httpstatus=HttpStatus.BAD_REQUEST;
