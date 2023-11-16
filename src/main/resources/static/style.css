@@ -11,7 +11,14 @@ html, body {
     transform: rotate(90deg);
   }
 } */
-
+#text-overlay {
+  position: absolute;
+  top: 20%;
+  left: 45%;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+}
 #progress {
   position: absolute;
   width: 100%;
