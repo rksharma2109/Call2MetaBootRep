@@ -1,4 +1,4 @@
-package com.arhevdika.meta.payload;
+package com.arhevdika.meta;
 public class MetaPayload {
 	String name;
 	String clanguage;
