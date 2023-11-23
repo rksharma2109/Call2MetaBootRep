@@ -1,4 +1,4 @@
-package com.arhevdika.meta;
+package com.arhevdika.meta.payload;
 
 
 public class MetaPayload {
@@ -10,6 +10,70 @@ public class MetaPayload {
 	String EMIamount;
 	String duedate;
 	String pemi;
+	String CInstatus;
+	String Lastpaiddate;
+	String nextemidate;
+	String Totalpaidemi;
+	String Outstanding;
+	String Preclosureamt;
+	String Centermangcontactno;
+	String Branchmgrname;
+	String Branchmgrcontactno;
+	
+	public String getCInstatus() {
+		return CInstatus;
+	}
+	public void setCInstatus(String cInstatus) {
+		CInstatus = cInstatus;
+	}
+	public String getLastpaiddate() {
+		return Lastpaiddate;
+	}
+	public void setLastpaiddate(String lastpaiddate) {
+		Lastpaiddate = lastpaiddate;
+	}
+	public String getNextemidate() {
+		return nextemidate;
+	}
+	public void setNextemidate(String nextemidate) {
+		this.nextemidate = nextemidate;
+	}
+	public String getTotalpaidemi() {
+		return Totalpaidemi;
+	}
+	public void setTotalpaidemi(String totalpaidemi) {
+		Totalpaidemi = totalpaidemi;
+	}
+	public String getOutstanding() {
+		return Outstanding;
+	}
+	public void setOutstanding(String outstanding) {
+		Outstanding = outstanding;
+	}
+	public String getPreclosureamt() {
+		return Preclosureamt;
+	}
+	public void setPreclosureamt(String preclosureamt) {
+		Preclosureamt = preclosureamt;
+	}
+	public String getCentermangcontactno() {
+		return Centermangcontactno;
+	}
+	public void setCentermangcontactno(String centermangcontactno) {
+		Centermangcontactno = centermangcontactno;
+	}
+	public String getBranchmgrname() {
+		return Branchmgrname;
+	}
+	public void setBranchmgrname(String branchmgrname) {
+		Branchmgrname = branchmgrname;
+	}
+	public String getBranchmgrcontactno() {
+		return Branchmgrcontactno;
+	}
+	public void setBranchmgrcontactno(String branchmgrcontactno) {
+		Branchmgrcontactno = branchmgrcontactno;
+	}
 	public String getName() {
 		return name;
 	}
