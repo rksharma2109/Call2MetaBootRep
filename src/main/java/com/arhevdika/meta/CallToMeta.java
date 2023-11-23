@@ -89,7 +89,17 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
 	@PostMapping(value = "/redirectURL")
 	 public String  redirectURL(@RequestBody MetaPayload
 			metaPayload) {
-	 String redirectUrl ="https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a";
+		 try {
+		 System.out.println("in call to meta dukh bhanjan1 api new one");
+		String data="name="+metaPayload.getName()+"&clanguage="+metaPayload.getClanguage()+"&accnum="+metaPayload.getAccnum()+"&loanamout="+metaPayload.getLoanamout()+"&pendingamount="+metaPayload.getPendingamount()+"&EMIamount="+metaPayload.getEMIamount()+"&duedate="+metaPayload.getDuedate()+"&pemi="+metaPayload.getPemi()+"&cinstatus="+metaPayload.getCInstatus()+"&Lastpaiddate="+metaPayload.getLastpaiddate()+"&nextemidate="+metaPayload.getNextemidate()+"&Totalpaidemi="+metaPayload.getTotalpaidemi()+"&Outstanding="+metaPayload.getOutstanding()+"&Preclosureamt="+metaPayload.getPreclosureamt()+"&Centermangcontactno="+metaPayload.getCentermangcontactno()+"&Branchmgrname="+metaPayload.getBranchmgrname()+"&Branchmgrcontactno="+metaPayload.getBranchmgrcontactno(); 
+			 System.out.println(data);
+				String encData=encdec.encryptnew(data);
+			   	System.out.println(encData);
+		 }catch(Exception e) {
+			
+			System.out.println("error is"+e);
+		}
+	 String redirectUrl ="https://metawebapp.azurewebsites.net/index.html?data="+data;
    	 return redirectUrl; 
     }
 	
