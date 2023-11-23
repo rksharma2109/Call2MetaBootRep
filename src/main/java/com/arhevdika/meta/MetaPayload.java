@@ -1,6 +1,4 @@
 package com.arhevdika.meta.payload;
-
-
 public class MetaPayload {
 	String name;
 	String clanguage;
