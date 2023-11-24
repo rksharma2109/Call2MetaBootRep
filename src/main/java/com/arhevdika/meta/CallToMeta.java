@@ -100,7 +100,7 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
 			
 			System.out.println("error is"+e);
 		}
-	 String redirectUrl ="https://metawebapp.azurewebsites.net/index.html?data="+data;
+	 String redirectUrl ="https://metawebapp.azurewebsites.net/index.html?data="+encData;
    	 return redirectUrl; 
     }
 	
