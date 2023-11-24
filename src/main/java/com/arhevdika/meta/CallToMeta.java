@@ -89,6 +89,7 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
 	@PostMapping(value = "/redirectURL")
 	 public String  redirectURL(@RequestBody MetaPayload
 			metaPayload) {
+		 String data="";
 		 try {
 		 System.out.println("in call to meta dukh bhanjan1 api new one");
 		String data="name="+metaPayload.getName()+"&clanguage="+metaPayload.getClanguage()+"&accnum="+metaPayload.getAccnum()+"&loanamout="+metaPayload.getLoanamout()+"&pendingamount="+metaPayload.getPendingamount()+"&EMIamount="+metaPayload.getEMIamount()+"&duedate="+metaPayload.getDuedate()+"&pemi="+metaPayload.getPemi()+"&cinstatus="+metaPayload.getCInstatus()+"&Lastpaiddate="+metaPayload.getLastpaiddate()+"&nextemidate="+metaPayload.getNextemidate()+"&Totalpaidemi="+metaPayload.getTotalpaidemi()+"&Outstanding="+metaPayload.getOutstanding()+"&Preclosureamt="+metaPayload.getPreclosureamt()+"&Centermangcontactno="+metaPayload.getCentermangcontactno()+"&Branchmgrname="+metaPayload.getBranchmgrname()+"&Branchmgrcontactno="+metaPayload.getBranchmgrcontactno(); 
