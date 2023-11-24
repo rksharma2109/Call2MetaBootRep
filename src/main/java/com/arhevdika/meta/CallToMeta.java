@@ -90,11 +90,12 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
 	 public String  redirectURL(@RequestBody MetaPayload
 			metaPayload) {
 		 String data="";
+		 String encData="";
 		 try {
 		 System.out.println("in call to meta dukh bhanjan1 api new one");
 		 data="name="+metaPayload.getName()+"&clanguage="+metaPayload.getClanguage()+"&accnum="+metaPayload.getAccnum()+"&loanamout="+metaPayload.getLoanamout()+"&pendingamount="+metaPayload.getPendingamount()+"&EMIamount="+metaPayload.getEMIamount()+"&duedate="+metaPayload.getDuedate()+"&pemi="+metaPayload.getPemi()+"&cinstatus="+metaPayload.getCInstatus()+"&Lastpaiddate="+metaPayload.getLastpaiddate()+"&nextemidate="+metaPayload.getNextemidate()+"&Totalpaidemi="+metaPayload.getTotalpaidemi()+"&Outstanding="+metaPayload.getOutstanding()+"&Preclosureamt="+metaPayload.getPreclosureamt()+"&Centermangcontactno="+metaPayload.getCentermangcontactno()+"&Branchmgrname="+metaPayload.getBranchmgrname()+"&Branchmgrcontactno="+metaPayload.getBranchmgrcontactno(); 
 			 System.out.println(data);
-				String encData=encdec.encryptnew(data);
+				 encData=encdec.encryptnew(data);
 			   	System.out.println(encData);
 		 }catch(Exception e) {
 			
