@@ -1,4 +1,7 @@
 package com.arhevdika.meta;
+package com.arhevdika.meta.payload;
+
+
 public class MetaPayload {
 	String name;
 	String clanguage;
@@ -17,7 +20,21 @@ public class MetaPayload {
 	String Centermangcontactno;
 	String Branchmgrname;
 	String Branchmgrcontactno;
+	String applicant_id;
+	String user_id;
 	
+	public String getApplicant_id() {
+		return applicant_id;
+	}
+	public void setApplicant_id(String applicant_id) {
+		this.applicant_id = applicant_id;
+	}
+	public String getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
 	public String getCInstatus() {
 		return CInstatus;
 	}
@@ -123,4 +140,6 @@ public class MetaPayload {
 	
 	
 }
+
+
 
