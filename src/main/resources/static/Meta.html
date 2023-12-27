@@ -122,19 +122,14 @@ alert("Enhlisj=h version");
 complete: function(xmlHttp) {
     // xmlHttp is a XMLHttpRquest object
     alert(xmlHttp.status);
-    alert(xmlHttp.redirect);
+
 	alert(xmlHttp.responseText);
-	if (xmlHttp.status == 200) {
-       var redirect = null;
-       try {
-           redirect = $.parseJSON(xmlHttp.responseText).redirect;
-           if (redirect) {
-               window.location.href = redirect.replace(/\?.*$/, "?next=" + window.location.pathname);
-           }
-       } catch (e) {
-           return;
-       }
+	
+      if (xmlHttp.status == 200) {
+		window.location=xmlHttp.responseText;
+       
    }
+   
   },
 	  success: function(data, textStatus, jqXHR ){
 console.log(jqXHR);
