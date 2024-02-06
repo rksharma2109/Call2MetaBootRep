@@ -143,7 +143,7 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
 
 
 	       RedirectView redirectView = new RedirectView();
-	       redirectView.setUrl("https://metawebapp.azurewebsites.net/index.html?datainput);
+	       redirectView.setUrl("https://metawebapp.azurewebsites.net/index.html?"+input);
 
 	       return redirectView;
 
