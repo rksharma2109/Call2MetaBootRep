@@ -28,8 +28,20 @@
 
     <!-- Adding link to the button on the onclick event -->
     <button class="GFG"
-    onclick=callmeta()>
-        Click FOR Hindi new
+    onclick=callmeta("MinalKumari",150000)>
+        Click FOR Hindi MinalKumari
+    </button>
+	  <button class="GFG"
+    onclick=callmeta("Rajeesharma",350000)>
+        Click FOR Hindi Rajeesharma
+    </button>
+	  <button class="GFG"
+    onclick=callmeta("Richsahrma",70000)>
+        Click FOR Hindi Richsahrma
+    </button>
+	  <button class="GFG"
+    onclick=callmeta("Viveksharma",90000)>
+        Click FOR Hindi Viceksharma
     </button>
 	 <button class="GFG"
     onclick=callnewOne()>
@@ -37,7 +49,7 @@
     </button>
 </body>
   <script>
-  function callmeta(){
+  function callmeta(name,acct){
 alert("hindi version");
   $.ajax(
   {
@@ -46,9 +58,9 @@ alert("hindi version");
    
           data: JSON.stringify({
 
-  "name": "Minalkumari",
+  "name": name,
   "clanguage": "hindi",
-  "accnum": "210981818118",
+  "accnum": acct,
   "pendingamount": "200",
   "duedate": "23/01/2023",
   "pemi": "20",
