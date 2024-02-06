@@ -61,7 +61,7 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
 				String encData=encdec.encryptnew(data);
 			   	System.out.println(encData);
 				responseMessage="Url opened successfully";
-				 URI redirecturl = new URI("https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
+				 URI redirecturl = new URI("https://metawebapp.azurewebsites.net/index.html?data="+encData);
 				 httpHeaders.setLocation(redirecturl);
 				status="true";
 				httpstatus=HttpStatus.OK;	
@@ -143,7 +143,7 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
 
 
 	       RedirectView redirectView = new RedirectView();
-	       redirectView.setUrl("https://metawebapp.azurewebsites.net/index.html?data=U2FsdGVkX18RqgaQSJ4FtIwILZHMWdVXXiFpgimNDTPMqvynO3vG8OFvv8imUIrfj91gDDTGzENjbz8BaxhvOvnd8OQ4P3drYOaPpjWVXfOB6vKEsffx3fKtZNSuzqxx13AYJaApf+NYLFlFMSFO7BDCdGaDrH/GtS7BeFVrWsc1Djup/lm+QZ16JtKkEX+a");
+	       redirectView.setUrl("https://metawebapp.azurewebsites.net/index.html?datainput);
 
 	       return redirectView;
 
