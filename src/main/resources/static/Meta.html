@@ -4,8 +4,7 @@
 
 <head>
     <title>
-        Create an HTML button that
-        acts like a link
+        Meta Test
     </title>
 
     <!-- Style to create button -->
@@ -29,37 +28,124 @@
 
     <!-- Adding link to the button on the onclick event -->
     <button class="GFG"
-    onclick=callmeta()>
-        Click Here
+    onclick=callmeta("MinalKumari",2110048124122005)>
+        Click FOR Hindi MinalKumari
+    </button>
+	  <button class="GFG"
+    onclick=callmeta("Rajeesharma",2110048124122005)>
+        Click FOR Hindi Rajeesharma
+    </button>
+	  <button class="GFG"
+    onclick=callmeta("Richsahrma",2110048124122005)>
+        Click FOR Hindi Richsahrma
+    </button>
+	  <button class="GFG"
+    onclick=callmeta("Viveksharma",2110048124122005)>
+        Click FOR Hindi Viceksharma
+    </button>
+	 <button class="GFG"
+    onclick=callnewOne()>
+        Click FOR English new
     </button>
 </body>
   <script>
-  function callmeta(){
-alert("meta meta2");
+  function callmeta(name,acct){
+alert("hindi version");
   $.ajax(
   {
-          type: 'POST',
-          url: 'http://4.236.144.236:9567/meta',
-
+         type: 'POST',
+          url: 'https://metawebapp.azurewebsites.net/redirectURL',
+   
           data: JSON.stringify({
 
-			    "name": "rohit",
-			    "clanguage": "english",
-			    "accnum": "210988",
-			    "pendingamount": "2000",
-			    "duedate": "12-sep-2025",
-			    "pemi": "500",
-			    "emiamount": "5000",
-			    "loanamout": "10000"
-
+  "name": name,
+  "clanguage": "hindi",
+  "accnum": acct,
+  "pendingamount": "200",
+  "duedate": "23/01/2023",
+  "pemi": "20",
+  "nextemidate": "23/02/2023",
+  "applicant_id": "1234",
+  "user_id": "1234",
+  "centermangcontactno": "88999999999",
+  "branchmgrcontactno": "899999999999",
+  "outstanding": "2000",
+  "emiamount": "200",
+  "loanamout": "3000",
+  "cinstatus": "its current loan status",
+  "totalpaidemi": "5",
+  "lastpaiddate": "23/12/2022",
+  "preclosureamt": "200",
+  "branchmgrname": "Ekta kumari"
           }),
-          contentType: "application/json; charset=utf-8",
-		               crossDomain: false,
+
+          contentType: "application/json; charset=utf-8",		             
              dataType: "json",
-          success: function (data, status, jqXHR) {
-          alert("SUCCESS");
-              //location.reload();
-          }
+complete: function(xmlHttp,jqXHR ) {
+    // xmlHttp is a XMLHttpRquest object
+    alert(xmlHttp.status);
+    
+	
+	alert(xmlHttp.responseText);
+	if (xmlHttp.status == 200) {
+		window.location=xmlHttp.responseText;
+       
+   }
+  },
+	  success: function(data, textStatus, jqXHR ){
+console.log(jqXHR);
+
+}
+    });
+  }
+	   function callnewOne(){
+alert("Enhlisj=h version");
+  $.ajax(
+  {
+         type: 'POST',
+          url: 'https://metawebapp.azurewebsites.net/redirectURL',
+   
+          data: JSON.stringify({
+
+  "name": "minal",
+  "clanguage": "english",
+  "accnum": "1255829293",
+  "pendingamount": "200",
+  "duedate": "23/01/2023",
+  "pemi": "20",
+  "nextemidate": "23/02/2023",
+  "applicant_id": "1234",
+  "user_id": "1234",
+  "centermangcontactno": "9999999999",
+  "branchmgrcontactno": "99999999999",
+  "outstanding": "200",
+  "emiamount": "20",
+  "loanamout": "3000",
+  "cinstatus": "its current loan status",
+  "totalpaidemi": "5",
+  "lastpaiddate": "23/12/2022",
+  "preclosureamt": "200",
+  "branchmgrname": "Ekta"
+          }),
+
+          contentType: "application/json; charset=utf-8",		             
+             dataType: "json",
+complete: function(xmlHttp) {
+    // xmlHttp is a XMLHttpRquest object
+    alert(xmlHttp.status);
+
+	alert(xmlHttp.responseText);
+	
+      if (xmlHttp.status == 200) {
+		window.location=xmlHttp.responseText;
+       
+   }
+   
+  },
+	  success: function(data, textStatus, jqXHR ){
+console.log(jqXHR);
+
+}
     });
   }
   </script>
