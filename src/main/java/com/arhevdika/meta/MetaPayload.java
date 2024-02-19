@@ -3,6 +3,7 @@ public class MetaPayload {
 	String name;
 	String clanguage;
 	String accnum;
+	String loanno;
 	String loanamount;
 	String pendingamount;
 	String EMIamount;
@@ -101,8 +102,15 @@ public class MetaPayload {
 	public String getAccnum() {
 		return accnum;
 	}
+	
 	public void setAccnum(String accnum) {
 		this.accnum = accnum;
+	}
+	public void setLoannum(String loanno) {
+		this.loanno = loanno;
+	}
+	public String getLoanno() {
+		return loanno;
 	}
 	public String getLoanamout() {
 		return loanamount;
