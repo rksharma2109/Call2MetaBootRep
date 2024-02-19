@@ -5,6 +5,17 @@ public class MetaDataResponsePayload {
 String applicant_id;
 String Response;
 String user_pin;
+String request_id;
+
+
+
+
+public String getRequest_id() {
+	return request_id;
+}
+public void setRequest_id(String request_id) {
+	this.request_id = request_id;
+}
 public String getApplicant_id() {
 	return applicant_id;
 }
