@@ -56,8 +56,19 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
 		   
 			try {
 				System.out.println("in call to meta dukh bhanjan1 api new one");
-				String data="name="+metaPayload.getName()+"&clanguage="+metaPayload.getClanguage()+"&accnum="+metaPayload.getAccnum()+"&loanno="+metaPayload.getLoanno()
-					+"&loanamout="+metaPayload.getLoanamout()+"&pendingamount="+metaPayload.getPendingamount()+"&EMIamount="+metaPayload.getEMIamount()+"&duedate="+metaPayload.getDuedate()+"&pemi="+metaPayload.getPemi()+"&cinstatus="+metaPayload.getCInstatus()+"&Lastpaiddate="+metaPayload.getLastpaiddate()+"&nextemidate="+metaPayload.getNextemidate()+"&Totalpaidemi="+metaPayload.getTotalpaidemi()+"&Outstanding="+metaPayload.getOutstanding()+"&Preclosureamt="+metaPayload.getPreclosureamt()+"&Centermangcontactno="+metaPayload.getCentermangcontactno()+"&Branchmgrname="+metaPayload.getBranchmgrname()+"&Branchmgrcontactno="+metaPayload.getBranchmgrcontactno(); 
+				String data="name="+metaPayload.getName()+"&clanguage="+metaPayload.getClanguage()
+					+"&accnum="+metaPayload.getAccnum()+"&loanno="+metaPayload.getLoanno()
+					+"&loanamout="+metaPayload.getLoanamout()+"&pendingamount="+metaPayload.getPendingamount()
+					+"&EMIamount="+metaPayload.getEMIamount()
+					+"&duedate="+metaPayload.getDuedate()
+					+"&pemi="+metaPayload.getPemi()+"&cinstatus="+metaPayload.getCInstatus()
+					+"&Lastpaiddate="+metaPayload.getLastpaiddate()+"&nextemidate="
+					+metaPayload.getNextemidate()+"&Totalpaidemi="+metaPayload.getTotalpaidemi()
+					+"&Outstanding="+metaPayload.getOutstanding()
+					+"&Preclosureamt="+metaPayload.getPreclosureamt()
+					+"&Centermangcontactno="+metaPayload.getCentermangcontactno()
+					+"&Branchmgrname="+metaPayload.getBranchmgrname()
+					+"&Branchmgrcontactno="+metaPayload.getBranchmgrcontactno(); 
 			 System.out.println(data);
 				String encData=encdec.encryptnew(data);
 			   	System.out.println(encData);
@@ -94,7 +105,8 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
 		 String encData="";
 		 try {
 		 System.out.println("in call to meta dukh bhanjan1 api new one");
-		 data="name="+metaPayload.getName()+"&clanguage="+metaPayload.getClanguage()+"&accnum="+metaPayload.getAccnum()+"&loanno="+metaPayload.getLoanno()+"&loanamout="+metaPayload.getLoanamout()+"&pendingamount="+metaPayload.getPendingamount()+"&EMIamount="+metaPayload.getEMIamount()+"&duedate="+metaPayload.getDuedate()
+		 data="name="+metaPayload.getName()+"&clanguage="+metaPayload.getClanguage()+"&accnum="+metaPayload.getUser_id()
+			 +"&loanno="+metaPayload.getApplicant_id()+"&loanamout="+metaPayload.getLoanamout()+"&pendingamount="+metaPayload.getPendingamount()+"&EMIamount="+metaPayload.getEMIamount()+"&duedate="+metaPayload.getDuedate()
 			+"&pemi="+metaPayload.getPemi()+"&cinstatus="+metaPayload.getCInstatus()
 			+"&Lastpaiddate="+metaPayload.getLastpaiddate()+"&nextemidate="+metaPayload.getNextemidate()
 			+"&Totalpaidemi="+metaPayload.getTotalpaidemi()+"&Outstanding="+metaPayload.getOutstanding()
