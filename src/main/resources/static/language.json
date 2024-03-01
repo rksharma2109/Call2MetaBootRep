@@ -1,0 +1,114 @@
+{
+  "language": [{
+    "hindi": {
+      "stt_server":"https://tts.indiantts.in/tts?api_key=Grt45rtsd45T332sSw23derAsw2f5sd34i8hsders1&action=play&numeric=hcurrency&lang=hi_female_v1&samplerate=8000&ver=2",
+      "speaker": "hi_female_v1",
+      "nlu_model": "hindi",
+      "language_set":true,
+      "language":"hindi",
+      "data": [
+        "शेयर इंडिया में आपका स्वागत है, नमस्कार",
+        "आपकी ग्राहक आईडी है",
+        "आपका लोन नंबर हैं",
+        "आपकी ऋण राशि है",
+        "आपकी  देय बकाया राशि है",
+        "आपकी ईएमआई राशि है",
+        "आपकी बकाया ईएमआई की देय तिथि है",
+        "बकाया ईएमआई की संख्या है",
+        "आपका सिन स्टेटस है",
+        "आपकी अंतिम भुगतान की गई ईएमआई है",
+        "आपकी अगली ईएमआई तिथि है",
+        "आपकी कुल भुगतान की गई ईएमआई है",
+        "आपकी टोटल बकाया राशि है",
+        "आपके खाते के लिए प्रीक्लॉउज़रमेंट है",
+        "कृपया हमें अपना प्रश्न बताएं?",
+        "रूपए",
+        "आपके केंद्र प्रबंधक का नंबर है - ",
+        "आपके शाखा प्रबंधक का नाम है - ",
+        "आपके शाखा प्रबंधक संपर्क नंबर - "
+    ],
+    "data1" :[
+    
+      "आपका लोन नंबर है ",
+      "ऋण राशि - रु ",
+      "बकाया राशि - रु ",
+      "ईएमआई राशि - रु ",
+      "नियत तारीख - ",
+      "बकाया ईएमआई - रु ",
+      "सिन स्थिति -",
+      "अंतिम भुगतान ईएमआई - ",
+      "अगली ईएमआई तिथि - ",
+      "कुल भुगतान ईएमआई - ",
+      "बकाया राशि - रु ",
+      "प्रीक्लॉउज़रमेंट - रु ",
+      "केंद्र प्रबंधक संपर्क नंबर - ",
+      "शाखा प्रबंधक का नाम है - ",
+      "शाखा प्रबंधक संपर्क नंबर - "
+
+    ]
+    },
+    "punjabi": {
+      "stt_server":"wss://revapi.reverieinc.com/stream?src_lang=pu&apikey=824e2537ae880a7f6206762d18b68ea38e2a9619&domain=bfsi&appid=com.easiofy&appname=stt_stream",
+      "speaker": "pu_female",
+      "nlu_model": "punjabi",
+      "language_set":true,
+      "language":"punjabi",
+      "data":[
+        "ਆਰਥਵੇਦਿਕਾ ਵਿੱਚ ਤੁਹਾਡਾ ਸੁਆਗਤ ਹੈ, ਹੈਲੋ",
+        "ਤੁਹਾਡੇ ਖਾਤਾ ਨੰਬਰ ਦੇ ਆਖਰੀ ਚਾਰ ਅੰਕ ਹਨ",
+        "ਤੁਹਾਡੇ ਕਰਜ਼ੇ ਦੀ ਰਕਮ ਹੈ",
+        "ਤੁਹਾਡੀ ਬਕਾਇਆ ਰਕਮ ਹੈ",
+        "ਤੁਹਾਡੀ EMI ਰਕਮ ਹੈ",
+        "ਤੁਹਾਡੀ ਬਕਾਇਆ EMI ਦੀ ਨਿਯਤ ਮਿਤੀ ਹੈ",
+        "ਬਕਾਇਆ EMI ਦੀ ਗਿਣਤੀ ਹੈ",
+        "ਕਿਰਪਾ ਕਰਕੇ ਸਾਨੂੰ ਆਪਣਾ ਸਵਾਲ ਦੱਸੋ?",
+        "ਤੁਹਾਡੀ ਪੁੱਛਗਿੱਛ ਰਿਕਾਰਡ ਕੀਤੀ ਗਈ ਹੈ। ਅਸੀਂ ਜਲਦੀ ਹੀ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰਾਂਗੇ।",
+        "ਆਰਥਵੇਦਿਕਾ ਦੀ ਚੋਣ ਕਰਨ ਲਈ ਤੁਹਾਡਾ ਧੰਨਵਾਦ"
+    ]
+      
+    },
+    "english": {
+      "stt_server":"https://tts.indiantts.in/tts?api_key=Grt45rtsd45T332sSw23derAsw2f5sd34i8hsders1&action=play&numeric=currency&lang=hi_female_v1&samplerate=8000&ver=2",
+      "speaker": "en_female",
+      "nlu_model": "english",
+      "language_set":true,
+      "language":"english",
+      "data":[
+        "Welcome to Share India, Hello",
+        "Your customer ID is ",
+        "Your loan Number is",
+        "Your loan amount is ",
+        "your pending amount is ",
+        "Your EMI amount is ",
+        "Due date of your pending EMI is ",
+        "Number of EMI pending is ",
+        "Your Cin status is ",
+        "Your last paid EMI is ",
+        "Your Next EMI date is ",
+        "Your total paid EMI is ",
+        "Your outstanding amount is ",
+        "Preclouserment for your account is ",
+        "Please tell us your query?",
+        "Rupees"
+        
+    ],
+    "data2":[
+      "Last four digits of Account Number - XXXXXX",
+      "Loan Amount - Rs ",
+      "Pending Amount - Rs ",
+      "EMI Amount - Rs ",
+      "Due date - ",
+      "Pending EMI - Rs ",
+      "Cin status - ",
+      "Last Paid EMI - ",
+      "Next EMI date - ",
+      "Total Paid EMI - ",
+      "Outstanding amount - Rs ",
+      "Preclouserment - Rs ",
+      "Centre Manager Contact Number - ",
+      "Branch Manager Name is - ",
+      "Branch Manager Contact Number - "
+    ]
+    }  
+  }]
+}
