@@ -31,6 +31,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.http.HttpStatus;
+import org.apache.commons.lang3.StringUtils;
 import com.arhevdika.meta.Encdec;
 //@CrossOrigin(origins = {"https://nice-water-07efcb210.3.azurestaticapps.net","https://metawebapp.azurewebsites.net"})
 @RestController
@@ -48,9 +49,10 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
             return new RedirectView("/index.html", true);
     }
    public String convetTitleCase(String input){
-	   String s=null;
-	   s= input.split("\\s+").stream().map(s -> s.substring(0, 1).toUpperCase() + s.substring(1)).collect(Collectors.joining(" "));
-	   return s;
+	 
+	   String initcapStr = StringUtils.capitalize(input)
+	   //s= input.split("\\s+").stream().map(s -> s.substring(0, 1).toUpperCase() + s.substring(1)).collect(Collectors.joining(" "));
+	   return initcapStr;
    }
 	@RequestMapping(value={"/meta"}, method = RequestMethod.POST)
 	  public ResponseEntity<Void>  callTometa(@RequestBody MetaPayload metaPayload )
