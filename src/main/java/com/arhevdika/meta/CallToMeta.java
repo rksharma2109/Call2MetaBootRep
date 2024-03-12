@@ -50,7 +50,7 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
     }
    public String convetTitleCase(String input){
 	 
-	   String initcapStr = StringUtils.capitalize(input)
+	   String initcapStr = StringUtils.capitalize(input);
 	   //s= input.split("\\s+").stream().map(s -> s.substring(0, 1).toUpperCase() + s.substring(1)).collect(Collectors.joining(" "));
 	   return initcapStr;
    }
