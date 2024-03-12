@@ -45,7 +45,9 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
     System.out.println("Inside gotoNextPage!!!!!!");
             return new RedirectView("/index.html", true);
     }
-   
+   public String convetTitleCase(String input){
+	   return input.split("\\s+").stream().map(s -> s.substring(0, 1).toUpperCase() + s.substring(1)).collect(Collectors.joining(" "));
+   }
 	@RequestMapping(value={"/meta"}, method = RequestMethod.POST)
 	  public ResponseEntity<Void>  callTometa(@RequestBody MetaPayload metaPayload )
 			  throws IOException   {
@@ -67,7 +69,7 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
 					+"&Outstanding="+metaPayload.getOutstanding()
 					+"&Preclosureamt="+metaPayload.getPreclosureamt()
 					+"&Centermangcontactno="+metaPayload.getCentermangcontactno()
-					+"&Branchmgrname="+metaPayload.getBranchmgrname()
+					+"&Branchmgrname="+convetTitleCase(metaPayload.getBranchmgrname())
 					+"&Branchmgrcontactno="+metaPayload.getBranchmgrcontactno(); 
 			 System.out.println(data);
 				String encData=encdec.encryptnew(data);
@@ -111,7 +113,7 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
 			+"&Lastpaiddate="+metaPayload.getLastpaiddate()+"&nextemidate="+metaPayload.getNextemidate()
 			+"&Totalpaidemi="+metaPayload.getTotalpaidemi()+"&Outstanding="+metaPayload.getOutstanding()
 			+"&Preclosureamt="+metaPayload.getPreclosureamt()+"&Centermangcontactno="+metaPayload.getCentermangcontactno()
-			+"&Branchmgrname="+metaPayload.getBranchmgrname()+"&Branchmgrcontactno="+metaPayload.getBranchmgrcontactno()
+			+"&Branchmgrname="+convetTitleCase(metaPayload.getBranchmgrname())+"&Branchmgrcontactno="+metaPayload.getBranchmgrcontactno()
 			+"&applicant_id="+metaPayload.getApplicant_id()+"&user_id="+metaPayload.getUser_id(); 
 			 System.out.println(data);
 				 encData=encdec.encryptnew(data);
