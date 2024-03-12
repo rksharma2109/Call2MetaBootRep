@@ -48,7 +48,9 @@ public  RedirectView gotoNextPage(@RequestBody MetaPayload metaPayload) throws I
             return new RedirectView("/index.html", true);
     }
    public String convetTitleCase(String input){
-	   return input.split("\\s+").stream().map(s -> s.substring(0, 1).toUpperCase() + s.substring(1)).collect(Collectors.joining(" "));
+	   String s=null;
+	   s= input.split("\\s+").stream().map(s -> s.substring(0, 1).toUpperCase() + s.substring(1)).collect(Collectors.joining(" "));
+	   return s;
    }
 	@RequestMapping(value={"/meta"}, method = RequestMethod.POST)
 	  public ResponseEntity<Void>  callTometa(@RequestBody MetaPayload metaPayload )
